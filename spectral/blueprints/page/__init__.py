@@ -1,0 +1,1 @@
+from spectral.blueprints.page.views import page
