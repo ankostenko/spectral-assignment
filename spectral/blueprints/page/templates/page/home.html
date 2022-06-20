@@ -1,3 +1,19 @@
-<div>
-    Hello
+{% extends 'layouts/base.html' %}
+
+{% block title %}Spectral assignment{% endblock %}
+{% block meta_description %}Spectral assignment{% endblock %}
+
+
+{% block body %}
+<div class="container sm-margin-top">
+  <div class="row text-center">
+    <div class="col-lg-4">
+    </div>
+    <div class="col-lg-4">
+        <button type="button" class="btn btn-info" onclick="requestData()">Request data</button>
+    </div>
+    <div class="col-lg-4">
+    </div>
+  </div>
 </div>
+{% endblock %}
