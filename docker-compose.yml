@@ -2,7 +2,7 @@ version: '2'
 
 services:
   website:
-    build: .
+    build: client
     command: >
       gunicorn -b 0.0.0.0:8000
         --access-logfile -
@@ -10,7 +10,10 @@ services:
         "spectral.app:create_app()"
     environment:
       PYTHONUNBUFFERED: 'true'
-    volumes:
-      - '.:/spectral'
     ports:
       - '9000:8000'
+  grpc_server:
+    build: grpc_server
+    command: python spectral/app.py
+    environment:
+      PYTHONUNBUFFERED: 'true'

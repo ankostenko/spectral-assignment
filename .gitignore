@@ -129,3 +129,6 @@ dmypy.json
 
 # VSCode configurations
 .vscode
+
+# gRPC generated files
+gen_grpc/
