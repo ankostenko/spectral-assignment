@@ -2,6 +2,21 @@
 
 This is a technical assignment for SE.
 
+# Points of interest in code
+
+**protos/** - contains description of the service and its messages
+
+**client/** - flask application and gRPC client and Dockerfile to build service's image
+
+- [Main request handler](https://github.com/ankostenko/spectral-assignment/blob/main/client/spectral/blueprints/page/views.py)
+- [Tests](https://github.com/ankostenko/spectral-assignment/tree/main/client/spectral/tests/page)
+- [CLI commands](https://github.com/ankostenko/spectral-assignment/tree/main/client/cli/commands)
+
+**grpc_server** - gRPC server
+
+- [Entrypoint(grpc_server.py)](https://github.com/ankostenko/spectral-assignment/tree/main/grpc_server/spectral)
+- [DB mockup](https://github.com/ankostenko/spectral-assignment/blob/main/grpc_server/spectral/db/db_mock.py)
+
 # Build and run
 
 To run this project, you'll need **docker** and **docker-compose**
