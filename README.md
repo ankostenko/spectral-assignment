@@ -18,7 +18,7 @@ Run services
 docker-compose up --build
 ```
 
-Connect on localhost:9000/
+Connect on http://localhost:9000/
 
 ## Cleanup step
 
