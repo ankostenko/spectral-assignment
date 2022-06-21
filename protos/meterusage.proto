@@ -2,18 +2,22 @@ syntax = "proto3";
 
 package meterusage;
 
-// The greeting service definition.
+// MeterUsage server configuration
 service MeterUsage {
-    // Sends a greeting
-    rpc SayHi (HelloRequest) returns (HelloReply) {}
+    // Return usage data
+    rpc GetUsageData (UsageRequest) returns (UsageReply) {}
 }
   
-// The request message containing the user's name.
-message HelloRequest {
-    string name = 1;
+// The usage request 
+message UsageRequest {
+    // Name of requested usage statistics
+    string usage_stat_name = 1;
 }
 
-// The response message containing the greetings
-message HelloReply {
-    string message = 1;
+// The usage reply with time data and an actual statistics data
+message UsageReply {
+    // Datetime of an usage event
+    repeated string datetime = 1;
+    // Usage value
+    repeated string usage = 2;
 }
