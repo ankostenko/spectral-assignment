@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 import click
 
@@ -38,11 +39,16 @@ class CLI(click.MultiCommand):
 
         filename = os.path.join(cmd_folder, cmd_prefix + name + '.py')
 
-        with open(filename) as f:
-            code = compile(f.read(), filename, 'exec')
-            eval(code, ns, ns)
+        # Check if given command exists if not fail with an error message
+        file = Path(filename)
+        if file.exists():
+            with open(filename) as f:
+                code = compile(f.read(), filename, 'exec')
+                eval(code, ns, ns)
 
-        return ns['cli']
+            return ns['cli']
+        else:
+            ctx.fail(f"Unknown command '{name}'")
 
 
 @click.command(cls=CLI)
