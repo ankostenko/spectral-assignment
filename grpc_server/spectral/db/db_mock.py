@@ -13,8 +13,6 @@ def read_data_from_file() -> Tuple[list, list]:
         :return: Tuple of lists with datetime and usage values
     """
 
-    print(os.getcwd())
-
     with open('spectral/data/meterusage.csv') as f:
         datetime = []
         values = []
@@ -25,12 +23,6 @@ def read_data_from_file() -> Tuple[list, list]:
             # Assuming datetime in the first position and values in the second
             datetime.append(row[0])
             values.append(row[1])
-
-        # If there's a header in the csv file than we have to skip first row
-        skip_headers = True
-        if skip_headers:
-            datetime.pop(0)
-            values.pop(0)
 
         return datetime, values
 

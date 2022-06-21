@@ -39,3 +39,11 @@ body {
 .sm-margin-top {
   margin-top: 20px;
 }
+
+/**
+  Tables
+*/
+
+table, th, td {
+  border: 1px solid black;
+}
