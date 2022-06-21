@@ -29,7 +29,7 @@ def read_data_from_file() -> Tuple[list, list]:
         return datetime, values
 
 
-def get_usage_data(usage_stat_name: str, 
+def get_usage_data(usage_stat_name: str,
                    page_number: int, page_size: int) -> Tuple[list, list]:
     """
         Retrieves all available data by statistics name

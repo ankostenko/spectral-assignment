@@ -17,7 +17,7 @@ class CLI(click.MultiCommand):
         """
         commands = []
 
-        # All commands implementations stored in commands folder and only 
+        # All commands implementations stored in commands folder and only
         # files starting with 'cmd_' end up in commands
         for filename in os.listdir(cmd_folder):
             if filename.endswith('.py') and filename.startswith(cmd_prefix):
@@ -49,7 +49,6 @@ class CLI(click.MultiCommand):
             return ns['cli']
         else:
             ctx.fail(f"Unknown command '{name}'")
-
 
 
 @click.command(cls=CLI)
