@@ -12,6 +12,10 @@ service MeterUsage {
 message UsageRequest {
     // Name of requested usage statistics
     string usage_stat_name = 1;
+    // Number of page
+    int32 page_number = 2;
+    // Page size
+    int32 page_size = 3;
 }
 
 // The usage reply with time data and an actual statistics data
@@ -20,4 +24,6 @@ message UsageReply {
     repeated string datetime = 1;
     // Usage value
     repeated string usage = 2;
+    // Flag to show that we have more data to load
+    bool more = 3;
 }

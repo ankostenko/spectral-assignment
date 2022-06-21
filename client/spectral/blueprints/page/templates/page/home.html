@@ -10,7 +10,22 @@
     <div class="col-lg-4">
     </div>
     <div class="col-lg-4">
-        <button type="button" class="btn btn-info" onclick="requestData()">Request data</button>
+        <button type="button" class="btn btn-info" 
+          onclick="requestData()">Request data</button>
+        <button type="button" id="prev_btn" class="btn btn-info" 
+          disabled="true" onclick="prevPage()">
+          Prev
+        </button>
+        <button type="button" id="next_btn" class="btn btn-info" 
+          disabled="true" onclick="nextPage()">
+          Next
+        </button>
+        <select id="page_size">
+          <option value="20">20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="500">500</option>
+        </select>
         <div class="sm-margin-top">
           <div id="table" class="table"></div>
         </div>

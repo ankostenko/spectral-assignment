@@ -12,8 +12,10 @@ from db.db_mock import get_usage_data
 class MeterUsageServer(MeterUsageServicer):
 
     def GetUsageData(self, request, context):
-        datetime, values = get_usage_data(request.usage_stat_name)
-        return UsageReply(datetime=datetime, usage=values)
+        datetime, values, more = get_usage_data(request.usage_stat_name, 
+                                                request.page_number,
+                                                request.page_size)
+        return UsageReply(datetime=datetime, usage=values, more=more)
 
 
 def serve():
