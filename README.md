@@ -17,3 +17,9 @@ Run services
 ```sh
 docker-compose up --build
 ```
+
+## Cleanup step
+
+```sh
+docker-compose rm -f
+```
