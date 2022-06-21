@@ -70,3 +70,10 @@ function prevPage() {
     }
     requestData();
 }
+
+// On page size change reset page number to 0
+function resetPageNumber() {
+    page_number = 0;
+    document.getElementById('prev_btn').disabled = true;
+    requestData();
+}
