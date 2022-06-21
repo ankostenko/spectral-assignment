@@ -1,0 +1,11 @@
+# Testing and static analysis.
+pytest==5.1.0
+pytest-cov==2.7.1
+flake8==3.7.8
+
+# CLI.
+Click==6.4
+
+# gRPC and its tools
+grpcio==1.46.3
+grpcio-tools==1.46.3

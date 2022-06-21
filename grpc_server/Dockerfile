@@ -5,11 +5,13 @@ RUN mkdir -p $INSTALL_PATH
 
 WORKDIR $INSTALL_PATH
 
-RUN python -m pip install grpcio
-RUN python -m pip install grpcio-tools
+COPY requirements.txt requirements.txt 
+RUN pip install -r requirements.txt
 
 COPY --from=protos generated /spectral/spectral/gen_grpc
 
 COPY . .
+
+RUN pip install --editable .
 
 CMD python spectral/app.py
